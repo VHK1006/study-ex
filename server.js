@@ -68,12 +68,16 @@ app.get("/books/update", function(request, response) {
 });
 
 //create
+app.get("/books/create", function(request, response) {
+  response.render("create");
+})
+
 app.post("/books/create", function(request, response) {
   request.body.id = shortid.generate();
   db.get("books")
     .push(request.body)
     .write();
-  response.redirect("back");
+  response.redirect("/books");
 });
 
 // listen for requests :)
