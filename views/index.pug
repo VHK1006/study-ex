@@ -1,6 +1,17 @@
 extend ../layouts/common
 block head
-  div(class="btn-group d-flex")
-    a(href="/books", class="btn p-2 btn-secondary") Books
-    a(href="/users", class="btn p-2 btn-secondary") Users
-    a(href="/transactions", class="btn p-2 btn-secondary") Transactions
+  nav(class="navbar navbar-expand-lg navbar-light bg-light")
+    img(src="https://cdn.glitch.com/7a8a707a-f7fa-460a-a55e-8a301af0134a%2Ffavicon.png?v=1587918249346")
+    button(class="navbar-toggler", type="button", data-toggle="collapse", data-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+      span(class="navbar-toggler-icon")
+    div(class="collapse navbar-collapse", id="navbarSupportedContent")
+      ul(class="navbar-nav mr-auto")
+        li(class="nav-item active")
+          a(href="/", class="nav-link") Home
+            span(class="sr-only") (current)
+        li(class="nav-item")
+          a(href="/books", class="nav-link") Books
+        li(class="nav-item")
+          a(href="/users", class="nav-link") Users
+        li(class="nav-item")
+          a(href="/transactions", class="nav-link") Transactions
