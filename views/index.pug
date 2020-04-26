@@ -1,6 +1,6 @@
-h1 Hi
-a(href="/books") Books
-br
-a(href="/users") Users
-br
-a(href="/transactions") Transactions
+extend ../layouts/common
+block head
+  div(class="btn-group d-flex")
+    a(href="/books", class="btn p-2 btn-secondary") Books
+    a(href="/users", class="btn p-2 btn-secondary") Users
+    a(href="/transactions", class="btn p-2 btn-secondary") Transactions
