@@ -9,6 +9,7 @@ var shortid = require("shortid");
 
 var bookRoute = require("./routes/book.route");
 var userRoute = require("./routes/user.route");
+var transactionRoute = require("./routes/transaction.route");
 
 var db = require("./db");
 
@@ -25,6 +26,7 @@ app.get("/", function(request, response) {
 
 app.use("/books", bookRoute);
 app.use("/users", userRoute);
+app.use("/transactions", transactionRoute);
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {

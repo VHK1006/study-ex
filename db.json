@@ -1,16 +1,64 @@
 {
-  "books": [],
-  "user": [],
-  "users": [
+  "books": [
     {
-      "name": "A",
-      "phonenumber": "0123456",
-      "id": "SvuSShTgh"
+      "title": "Javascript",
+      "description": "Javascript",
+      "id": "SvahHW-Zv"
     },
     {
-      "name": "B",
-      "phonenumber": "12345",
-      "id": "aEPcXEqCT"
+      "title": "HTML",
+      "description": "HTML",
+      "id": "uaSxUllAz"
+    },
+    {
+      "title": "CSS",
+      "description": "CSS",
+      "id": "WkwKh36j4"
+    },
+    {
+      "title": "UI Design",
+      "description": "UI Design",
+      "id": "RbLz4Qt5z"
+    }
+  ],
+  "users": [
+    {
+      "name": "Nguyen Van A",
+      "phonenumber": "0123456789",
+      "id": "EYpaiMFYP"
+    },
+    {
+      "name": "Tran Van B",
+      "phonenumber": "0909999999",
+      "id": "G_dlqxRLk"
+    },
+    {
+      "name": "Tran Van C",
+      "phonenumber": "0367891011",
+      "id": "jUvacn-wz"
+    }
+  ],
+  "collections": [
+    {
+      "username": "Nguyen Van A",
+      "booktitle": "HTML",
+      "id": "MLb8iTC2N",
+      "userId": "EYpaiMFYP",
+      "bookId": "uaSxUllAz"
+    },
+    {
+      "username": "Tran Van B",
+      "booktitle": "HTML",
+      "id": "F9Atevgzc",
+      "userId": "G_dlqxRLk",
+      "bookId": "uaSxUllAz"
+    },
+    {
+      "username": "Tran Van C",
+      "booktitle": "Javascript",
+      "id": "LMKfcaCtd",
+      "userId": "jUvacn-wz",
+      "bookId": "SvahHW-Zv"
     }
   ]
 }

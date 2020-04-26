@@ -1,0 +1,11 @@
+h1 Create Transaction
+form(action="/transactions/create" method="POST")
+  label(for="user") Choose a user: 
+  select(id="user" name="username")
+    each user in users
+      option= user.name
+  label(for="book") Choose a book: 
+  select(id="book" name="booktitle")
+    each book in books
+      option= book.title
+  button Create
