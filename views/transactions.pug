@@ -8,6 +8,7 @@ table(style="border-collapse: collapse; width:100%")
     th(style="border: 1px solid #dddddd;padding: 8px") Id
     th(style="border: 1px solid #dddddd;padding: 8px") User
     th(style="border: 1px solid #dddddd;padding: 8px") Book
+    th(style="border: 1px solid #dddddd;padding: 8px")
   each transaction in collections
     tr(style="border: 1px solid #dddddd;padding: 8px")
       th(style="border: 1px solid #dddddd;padding: 8px")
@@ -15,3 +16,5 @@ table(style="border-collapse: collapse; width:100%")
       th(style="border: 1px solid #dddddd;padding: 8px")= transaction.id
       th(style="border: 1px solid #dddddd;padding: 8px")= transaction.username
       th(style="border: 1px solid #dddddd;padding: 8px")= transaction.booktitle
+      th(style="border: 1px solid #dddddd;padding: 8px")
+        a(href="/transactions/" + transaction.id + "/complete") Complete

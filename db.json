@@ -44,21 +44,24 @@
       "booktitle": "HTML",
       "id": "MLb8iTC2N",
       "userId": "EYpaiMFYP",
-      "bookId": "uaSxUllAz"
+      "bookId": "uaSxUllAz",
+      "isComplete": true
     },
     {
       "username": "Tran Van B",
       "booktitle": "HTML",
       "id": "F9Atevgzc",
       "userId": "G_dlqxRLk",
-      "bookId": "uaSxUllAz"
+      "bookId": "uaSxUllAz",
+      "isComplete": false
     },
     {
       "username": "Tran Van C",
       "booktitle": "Javascript",
       "id": "LMKfcaCtd",
       "userId": "jUvacn-wz",
-      "bookId": "SvahHW-Zv"
+      "bookId": "SvahHW-Zv",
+      "isComplete": false
     }
   ]
 }

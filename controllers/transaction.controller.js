@@ -35,9 +35,20 @@ module.exports.postCreate = function(request, response) {
 
   request.body.userId = user.id;
   request.body.bookId = book.id;
+  request.body.isComplete = false;
 
   db.get("collections")
       .push(request.body)
       .write();
     response.redirect("/transactions");
+};
+
+//complete
+module.exports.complete = function(request, response) {
+  var id = request.params.id;
+  db.get("collections")
+    .find({ id: id })
+    .assign( { isComplete: true })
+    .write();
+  response.redirect("/transactions");
 };
