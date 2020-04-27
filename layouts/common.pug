@@ -2,5 +2,21 @@ html
   head
     block head
     link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/styles/custom.css")
   body
-    block content
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      img(src="https://cdn.glitch.com/7a8a707a-f7fa-460a-a55e-8a301af0134a%2Ffavicon.png?v=1587918249346")
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='/users') User
+          li.nav-item
+            a.nav-link(href='/books') Book
+          li.nav-item
+            a.nav-link(href='/transactions') Transaction
+    .container.pt-5
+      block content

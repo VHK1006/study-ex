@@ -35,6 +35,22 @@ module.exports.create = function(request, response) {
 
 module.exports.postCreate = function(request, response) {
   request.body.id = shortid.generate();
+  var errors = [];
+  if (!request.body.name) {
+    errors.push('Name is required.');
+  }
+
+  if (!request.body.phonenumber) {
+    errors.push('Phone number is required.');
+  }
+
+  if (errors.length) {
+    response.render("createUser", {
+      errors: errors,
+      values: request.body
+    })
+    return;
+  }
   db.get("users")
     .push(request.body)
     .write();

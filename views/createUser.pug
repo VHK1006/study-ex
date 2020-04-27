@@ -1,12 +1,15 @@
+if errors
+  each error in errors
+    .alert.alert-danger= error
 form(action="/users/create", method="POST")
   strong Create User
   br
   label Name
   br
-  input(type="text", name="name")
+  input(type="text", name="name", value=values ? values.name : "")
   br
   label Phone Number
   br
-  input(type="text", name="phonenumber")
+  input(type="text", name="phonenumber", value=values ? values.phonenumber : "")
   br
   button Create

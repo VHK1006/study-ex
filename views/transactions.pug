@@ -1,20 +1,23 @@
-h1 Transaction
-a(href="/") Home
-span &nbsp
-a(href="/transactions/create") New
-table(style="border-collapse: collapse; width:100%")
-  tr(style="border: 1px solid #dddddd;padding: 8px")
-    th(style="border: 1px solid #dddddd;padding: 8px")
-    th(style="border: 1px solid #dddddd;padding: 8px") Id
-    th(style="border: 1px solid #dddddd;padding: 8px") User
-    th(style="border: 1px solid #dddddd;padding: 8px") Book
-    th(style="border: 1px solid #dddddd;padding: 8px")
-  each transaction in collections
-    tr(style="border: 1px solid #dddddd;padding: 8px")
-      th(style="border: 1px solid #dddddd;padding: 8px")
-        a(href="/transactions/" + transaction.id + "/delete") Delete
-      th(style="border: 1px solid #dddddd;padding: 8px")= transaction.id
-      th(style="border: 1px solid #dddddd;padding: 8px")= transaction.username
-      th(style="border: 1px solid #dddddd;padding: 8px")= transaction.booktitle
-      th(style="border: 1px solid #dddddd;padding: 8px")
-        a(href="/transactions/" + transaction.id + "/complete") Complete
+extend ../layouts/common
+block content
+  if errors
+    each error in errors
+      .alert.alert-danger= error
+  h1 Transaction
+  a(href="/transactions/create") New
+  table.table
+    tr
+      th
+      th Id
+      th User
+      th Book
+      th
+    each transaction in collections
+      tr
+        th
+          a(href="/transactions/" + transaction.id + "/delete") Delete
+        th= transaction.id
+        th= transaction.username
+        th= transaction.booktitle
+        th
+          a(href="/transactions/" + transaction.id + "/complete") Complete
