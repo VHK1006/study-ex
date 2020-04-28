@@ -1,4 +1,4 @@
-var db = require('../db');
+var db = require("../db");
 var shortid = require("shortid");
 
 module.exports.index = function(request, response) {
@@ -12,8 +12,10 @@ module.exports.index = function(request, response) {
       .get("users")
       .value()
       .filter(function(user) {
-        return (user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1) ||
-          (user.phonenumber.indexOf(q) !== -1);
+        return (
+          user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1 ||
+          user.phonenumber.indexOf(q) !== -1
+        );
       });
     response.render("users", {
       users: matchUser
@@ -36,19 +38,24 @@ module.exports.create = function(request, response) {
 module.exports.postCreate = function(request, response) {
   request.body.id = shortid.generate();
   var errors = [];
+
+  if (request.body.name.length > 30) {
+    errors.push("Name cannot exceed 30 characters");
+  }
+
   if (!request.body.name) {
-    errors.push('Name is required.');
+    errors.push("Name is required.");
   }
 
   if (!request.body.phonenumber) {
-    errors.push('Phone number is required.');
+    errors.push("Phone number is required.");
   }
 
   if (errors.length) {
     response.render("createUser", {
       errors: errors,
       values: request.body
-    })
+    });
     return;
   }
   db.get("users")
