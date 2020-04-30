@@ -27,32 +27,54 @@
       "phonenumber": "123456789",
       "id": "admin",
       "email": "admin@gmail.com",
-      "password": "123123",
-      "isAdmin": true
+      "password": "$2b$10$4gc6dCVRJGBKF3.g9nKYW.jap9L6aAiZUN5XJqSsizkILOOf6jo.6",
+      "isAdmin": true,
+      "wrongLoginCount": 0
     },
     {
       "name": "Nguyen Van A",
       "phonenumber": "0123456789",
       "id": "EYpaiMFYP",
       "email": "user1@gmail.com",
-      "password": "123123",
-      "isAdmin": false
+      "password": "$2b$10$4gc6dCVRJGBKF3.g9nKYW.jap9L6aAiZUN5XJqSsizkILOOf6jo.6",
+      "isAdmin": false,
+      "wrongLoginCount": 0
     },
     {
       "name": "Tran Van B",
       "phonenumber": "0909999999",
       "id": "G_dlqxRLk",
       "email": "user2@gmail.com",
-      "password": "123123",
-      "isAdmin": false
+      "password": "$2b$10$4gc6dCVRJGBKF3.g9nKYW.jap9L6aAiZUN5XJqSsizkILOOf6jo.6",
+      "isAdmin": false,
+      "wrongLoginCount": 0
     },
     {
       "name": "Tran Van C",
       "phonenumber": "0367891011",
       "id": "jUvacn-wz",
       "email": "user3@gmail.com",
-      "password": "123123",
-      "isAdmin": false
+      "password": "$2b$10$4gc6dCVRJGBKF3.g9nKYW.jap9L6aAiZUN5XJqSsizkILOOf6jo.6",
+      "isAdmin": false,
+      "wrongLoginCount": 0
+    },
+    {
+      "email": "user4@gmail.com",
+      "password": "$2b$10$GXdchoOBJhcorCOYIA7UdOTI.O3JZnZ5seKCjuGIrYIQ/pprslZb6",
+      "name": "Duong Van D",
+      "phonenumber": "012345789",
+      "id": "1fbwPoqXU",
+      "isAdmin": false,
+      "wrongLoginCount": 0
+    },
+    {
+      "email": "test@gmail.com",
+      "password": "$2b$10$24hDCqHb02Dk0zuI6atNouw1mUrzdz.f6I2z0Y0m4mdnecEIhMOeO",
+      "name": "test",
+      "phonenumber": "123",
+      "id": "7FUsp27g5",
+      "isAdmin": false,
+      "wrongLoginCount": 4
     }
   ],
   "collections": [

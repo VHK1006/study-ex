@@ -1,5 +1,6 @@
 var db = require("../db");
 var shortid = require("shortid");
+var bcrypt = require('bcrypt');
 
 module.exports.index = function(request, response) {
   var q = request.query.q;
@@ -37,6 +38,9 @@ module.exports.create = function(request, response) {
 
 module.exports.postCreate = function(request, response) {
   request.body.id = shortid.generate();
+  request.body.password = bcrypt.hashSync(request.body.password, 10);
+  request.body.isAdmin = false;
+  request.body.wrongLoginCount = 0;
 
   db.get("users")
     .push(request.body)
