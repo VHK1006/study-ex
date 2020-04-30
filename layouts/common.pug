@@ -18,5 +18,7 @@ html
             a.nav-link(href='/books') Book
           li.nav-item
             a.nav-link(href='/transactions') Transaction
+      if user
+        p= user.name
     .container.pt-5
       block content
