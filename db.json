@@ -23,19 +23,36 @@
   ],
   "users": [
     {
+      "name": "admin",
+      "phonenumber": "123456789",
+      "id": "admin",
+      "email": "admin@gmail.com",
+      "password": "123123",
+      "isAdmin": true
+    },
+    {
       "name": "Nguyen Van A",
       "phonenumber": "0123456789",
-      "id": "EYpaiMFYP"
+      "id": "EYpaiMFYP",
+      "email": "user1@gmail.com",
+      "password": "123123",
+      "isAdmin": false
     },
     {
       "name": "Tran Van B",
       "phonenumber": "0909999999",
-      "id": "G_dlqxRLk"
+      "id": "G_dlqxRLk",
+      "email": "user2@gmail.com",
+      "password": "123123",
+      "isAdmin": false
     },
     {
       "name": "Tran Van C",
       "phonenumber": "0367891011",
-      "id": "jUvacn-wz"
+      "id": "jUvacn-wz",
+      "email": "user3@gmail.com",
+      "password": "123123",
+      "isAdmin": false
     }
   ],
   "collections": [
@@ -53,7 +70,7 @@
       "id": "F9Atevgzc",
       "userId": "G_dlqxRLk",
       "bookId": "uaSxUllAz",
-      "isComplete": false
+      "isComplete": true
     },
     {
       "username": "Tran Van C",
@@ -61,7 +78,7 @@
       "id": "LMKfcaCtd",
       "userId": "jUvacn-wz",
       "bookId": "SvahHW-Zv",
-      "isComplete": false
+      "isComplete": true
     }
   ]
 }

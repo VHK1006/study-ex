@@ -1,15 +1,14 @@
-if errors
-  each error in errors
-    .alert.alert-danger= error
-form(action="/users/create", method="POST")
-  strong Create User
-  br
-  label Name
-  br
-  input(type="text", name="name", value=values ? values.name : "")
-  br
-  label Phone Number
-  br
-  input(type="text", name="phonenumber", value=values ? values.phonenumber : "")
-  br
-  button Create
+extend ../layouts/common
+block content
+  h1 Create User
+  if errors
+    each error in errors
+      .alert.alert-danger= error
+  form(action="/users/create", method="POST")
+    .form-group
+      label(for="name") Name
+      input#name.form-control(name="name", type="text", value=values ? values.name : "")
+    .form-group
+      label(for="phonenumber") Password
+      input#phonenumber.form-control(name="phonenumber", type="text", value=values ? values.phonenumber : "")
+    button.btn.btn-primary Create
