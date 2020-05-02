@@ -3,6 +3,8 @@
 
 // we've started you off with Express (https://expressjs.com/)
 // but feel free to use whatever libraries or frameworks you'd like through `package.json`.
+require('dotenv').config();
+
 var express = require("express");
 var pug = require("pug");
 var shortid = require("shortid");
@@ -24,7 +26,7 @@ app.set("views", "./views");
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static("public"));
-app.use(cookieParser('something123456789'));
+app.use(cookieParser(process.env.SESSION_SECRET));
 
 app.get("/", function(request, response) {
   response.render("index");
