@@ -2,8 +2,13 @@ var db = require("../db");
 var shortid = require("shortid");
 
 module.exports.index = function(request, response) {
+  var page = parseInt(request.query.page) || 1;
+  var perPage = 8;
+
+  var start = (page - 1) * perPage;
+  var end = page * perPage;
   response.render("transactions", {
-    collections: db.get("collections").value()
+    collections: db.get("collections").drop(page).take(perPage).value()
   });
 };
 

@@ -4,9 +4,14 @@ var bcrypt = require('bcrypt');
 
 module.exports.index = function(request, response) {
   var q = request.query.q;
+  var page = parseInt(request.query.page) || 1;
+  var perPage = 8;
+
+  var start = (page - 1) * perPage;
+  var end = page * perPage;
   if (q === undefined) {
     response.render("users", {
-      users: db.get("users").value()
+      users: db.get("users").drop(page).take(perPage).value()
     });
   } else {
     var matchUser = db
