@@ -15,8 +15,10 @@ var userRoute = require("./routes/user.route");
 var transactionRoute = require("./routes/transaction.route");
 var productRoute = require("./routes/product.route");
 var authRoute = require("./routes/auth.route");
+var cartRoute = require("./routes/cart.route");
 
 var authMiddleware = require("./middlewares/auth.middleware");
+var sessionMiddleware = require("./middlewares/session.middleware");
 
 var db = require("./db");
 
@@ -33,11 +35,12 @@ app.get("/", function(request, response) {
   response.render("index");
 });
 
-app.use("/books", authMiddleware.requireAuth, bookRoute);
+app.use("/books", sessionMiddleware.requireSession, bookRoute);
 app.use("/users", authMiddleware.requireAuth, userRoute);
 app.use("/transactions", authMiddleware.requireAuth, transactionRoute);
 app.use("/products",authMiddleware.requireAuth, productRoute);
 app.use("/auth", authRoute);
+app.use("/cart", cartRoute);
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {

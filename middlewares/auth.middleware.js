@@ -16,14 +16,20 @@ module.exports.requireAuth = function(request, response, next) {
     return;
   }
 
+  var cart = db
+    .get("sessions")
+    .filter(x => x.id === request.signedCookies.sessionId)
+    .value();
+
   var filterTransaction = db
     .get("collections")
     .filter(x => x.userId === request.cookies.userId)
     .value();
-  console.log(filterTransaction);
+
   if (request.cookies.isAdmin === "false") {
-    response.render("transactions", {
-      collections: filterTransaction
+    response.render("books", {
+      sessions: cart,
+      books: db.get("books").value()
     });
   }
   response.locals.user = user;

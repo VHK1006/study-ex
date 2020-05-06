@@ -19,4 +19,6 @@ router.get("/create", controller.create);
 
 router.post("/create", controller.postCreate);
 
+router.post("/createTransaction", controller.createTransaction);
+
 module.exports = router;

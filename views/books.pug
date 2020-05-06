@@ -17,14 +17,14 @@ block content
     input(type="text", name="newtitle")
     br
     button Update
-  table.table
-    tr
-      th Title
-      th Description
-      th
-    each book in books
-      tr
-        td= book.title
-        td= book.descriptin
-        td
-          a(href='/books/' + book.id + '/delete') Delete
+  each book in books
+    .col-sm-3.p-2
+      .card(style='width: 18rem;')
+        img.card-img-top(src= book.coverUrl, alt='...')
+        .card-body
+          h5.card-title= book.title
+          p.card-text= book.description
+          a.btn.btn-primary(href='/cart/add/' + book.id) Add to cart
+          a.btn.btn-primary(href='/books/' + book.id + '/delete') Delete
+  form(action="/books/createTransaction" method="POST")
+    button Rental

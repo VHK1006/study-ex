@@ -30,6 +30,8 @@ block content
       th
     each user in users
       tr
+        td
+          img(src=user.avatar ? user.avatar : "https://png.pngtree.com/svg/20161027/service_default_avatar_182956.png", width="32")
         td= user.name
         td= user.phonenumber
         td

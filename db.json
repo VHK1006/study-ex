@@ -3,22 +3,26 @@
     {
       "title": "Javascript",
       "description": "Javascript",
-      "id": "SvahHW-Zv"
+      "id": "SvahHW-Zv",
+      "coverUrl": "https://loremflickr.com/320/240"
     },
     {
       "title": "HTML",
       "description": "HTML",
-      "id": "uaSxUllAz"
+      "id": "uaSxUllAz",
+      "coverUrl": "https://loremflickr.com/320/240"
     },
     {
       "title": "CSS",
       "description": "CSS",
-      "id": "WkwKh36j4"
+      "id": "WkwKh36j4",
+      "coverUrl": "https://loremflickr.com/320/240"
     },
     {
       "title": "UI Design",
       "description": "UI Design",
-      "id": "RbLz4Qt5z"
+      "id": "RbLz4Qt5z",
+      "coverUrl": "https://loremflickr.com/320/240"
     }
   ],
   "users": [
@@ -74,7 +78,17 @@
       "phonenumber": "123",
       "id": "7FUsp27g5",
       "isAdmin": false,
-      "wrongLoginCount": 4
+      "wrongLoginCount": 5
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "$2b$10$Tu6R9iGxrpUCtCFqsgIkaehiaDwV7fDvfklvbJC2goOXFz1XM7x0a",
+      "name": "123",
+      "phonenumber": "123",
+      "id": "do668KTeX",
+      "isAdmin": false,
+      "wrongLoginCount": 0,
+      "avatar": "uploads/fca63aa4b2fdf73ed04dff87d9019037"
     }
   ],
   "collections": [
@@ -101,6 +115,22 @@
       "userId": "jUvacn-wz",
       "bookId": "SvahHW-Zv",
       "isComplete": true
+    },
+    {
+      "id": "YQMBZlDUN",
+      "userId": "EYpaiMFYP",
+      "username": "Nguyen Van A",
+      "bookId": "uaSxUllAz",
+      "booktitle": "HTML",
+      "isComplete": false
+    },
+    {
+      "id": "I7TpnBD9M",
+      "userId": "EYpaiMFYP",
+      "username": "Nguyen Van A",
+      "bookId": "RbLz4Qt5z",
+      "booktitle": "UI Design",
+      "isComplete": false
     }
   ],
   "products": [
@@ -803,6 +833,49 @@
       "image": "https://loremflickr.com/320/240",
       "description": "sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus",
       "price": 929
+    }
+  ],
+  "sessions": [
+    {
+      "id": "7Xq36-YUx",
+      "cart": {
+        "uaSxUllAz": 2,
+        "WkwKh36j4": 1
+      }
+    },
+    {
+      "id": "608pHDG24",
+      "cart": {
+        "uaSxUllAz": 1,
+        "WkwKh36j4": 1
+      }
+    },
+    {
+      "id": "juytbsz-V",
+      "cart": {
+        "uaSxUllAz": 1,
+        "WkwKh36j4": 1
+      }
+    },
+    {
+      "id": "11urS_tTe",
+      "cart": {
+        "uaSxUllAz": 2,
+        "SvahHW-Zv": 1
+      }
+    },
+    {
+      "id": "Hyl3krdlG",
+      "cart": {
+        "uaSxUllAz": 1
+      }
+    },
+    {
+      "id": "mCAJyZuXQ",
+      "cart": {
+        "uaSxUllAz": 2,
+        "RbLz4Qt5z": 1
+      }
     }
   ]
 }

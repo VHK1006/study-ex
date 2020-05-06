@@ -54,3 +54,39 @@ module.exports.postCreate = function(request, response) {
     .write();
   response.redirect("/books");
 };
+
+module.exports.createTransaction = function(request, response) {
+  request.body.id = shortid.generate();
+
+  var user = db.get('users').value().find((user) => {
+    return user.id === request.signedCookies.userId;
+  });
+
+  var session = db.get('sessions').value().find((x) => x.id === request.signedCookies.sessionId);
+
+
+  request.body.userId = user.id;
+  request.body.username = user.name;
+
+  var carts = [];
+
+  for (var key in session.cart) {
+    for (var book of db.get('books').value()) {
+      if (book.id === key) {
+        carts.push(book);
+      }
+    }
+  }
+
+  for(var book of carts) {
+    request.body.bookId = book.id;
+    request.body.booktitle = book.title;
+  }
+
+  request.body.isComplete = false;
+
+  db.get("collections")
+      .push(request.body)
+      .write();
+    response.redirect("/transactions");
+};

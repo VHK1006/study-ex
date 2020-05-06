@@ -46,6 +46,8 @@ module.exports.postCreate = function(request, response) {
   request.body.password = bcrypt.hashSync(request.body.password, 10);
   request.body.isAdmin = false;
   request.body.wrongLoginCount = 0;
+  
+  request.body.avatar = request.file.path.split('\\').slice(1).join('/');
 
   db.get("users")
     .push(request.body)
