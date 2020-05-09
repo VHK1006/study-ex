@@ -9,6 +9,7 @@ var express = require("express");
 var pug = require("pug");
 var shortid = require("shortid");
 var cookieParser = require("cookie-parser");
+var csurf = require('csurf');
 
 var bookRoute = require("./routes/book.route");
 var userRoute = require("./routes/user.route");
@@ -16,6 +17,10 @@ var transactionRoute = require("./routes/transaction.route");
 var productRoute = require("./routes/product.route");
 var authRoute = require("./routes/auth.route");
 var cartRoute = require("./routes/cart.route");
+var transferRoute = require("./routes/transfer.route");
+
+var apiProductRoute = require("./api/routes/product.route");
+var apiTransactionRoute = require("./api/routes/transaction.route");
 
 var authMiddleware = require("./middlewares/auth.middleware");
 var sessionMiddleware = require("./middlewares/session.middleware");
@@ -38,8 +43,13 @@ app.get("/", function(request, response) {
 app.use("/books", sessionMiddleware.requireSession, bookRoute);
 app.use("/users", authMiddleware.requireAuth, userRoute);
 app.use("/transactions", authMiddleware.requireAuth, transactionRoute);
-app.use("/products",authMiddleware.requireAuth, productRoute);
+app.use("/transfer", authMiddleware.requireAuth, transferRoute);
 app.use("/auth", authRoute);
+app.use("/api/products", apiProductRoute);
+app.use("/api/transactions", apiTransactionRoute);
+app.use(csurf({ cookie: true }));
+
+app.use("/products", productRoute);
 app.use("/cart", cartRoute);
 
 // listen for requests :)
